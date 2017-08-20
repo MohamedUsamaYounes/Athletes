@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Athletes</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list_page">ListPage</string>
+    <string name="string_internet_connection_not_available">internet connection not available</string>
+    <string name="string_some_thing_wrong">there is somthing wrong</string>
+    <string name="string_getting_json_title">Please wait</string>
+    <string name="string_getting_json_message">Loading.....</string>
+    <string name="string_click_to_load">Hello</string>
+</resources>
