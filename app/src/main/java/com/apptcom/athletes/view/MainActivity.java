@@ -14,8 +14,8 @@ import com.apptcom.athletes.R;
 import com.apptcom.athletes.model.Athlete;
 import com.apptcom.athletes.presnter.IAthletesPresenter;
 import com.apptcom.athletes.presnter.IAthletesView;
-import com.apptcom.athletes.presnter.Presenter;
-import com.apptcom.athletes.utils.InternetConnection;
+import com.apptcom.athletes.presnter.AllAthletesPresenter;
+import com.apptcom.athletes.utils.NetworkUtility;
 
 import java.util.ArrayList;
 
@@ -24,11 +24,11 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener, IAthletesView {
 
-    @BindView(R.id.progress_bar)
+    @BindView(R.id.main_progress_bar)
     ProgressBar mProgressBar;
-    @BindView(R.id.athlete_recyclerView)
+    @BindView(R.id.main_athlete_recyclerView)
     RecyclerView mRecyclerView;
-    @BindView(R.id.SwipeRefreshLayout)
+    @BindView(R.id.main_SwipeRefreshLayout)
     SwipeRefreshLayout mSwipeToRefresh;
 
     private AllAthletesAdapter mAdapter;
@@ -52,11 +52,11 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         mSwipeToRefresh.setOnRefreshListener(this);
 
         layoutManager = new LinearLayoutManager(MainActivity.this);
-        iAthletesPresenter = new Presenter(this);
+        iAthletesPresenter = new AllAthletesPresenter(this);
         allAthletesList = new ArrayList<>();
 
 
-        if (InternetConnection.isNetworkAvailable(this)) {
+        if (NetworkUtility.isNetworkAvailable(this)) {
             // load data
             mProgressBar.setVisibility(View.VISIBLE);
             iAthletesPresenter.loadAthletesFromServer();
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     @Override
     public void onRefresh() {
-        if (InternetConnection.isNetworkAvailable(this)) {
+        if (NetworkUtility.isNetworkAvailable(this)) {
             allAthletesList.clear();
             // overwrite list with empty one
             scrollListener.resetState();

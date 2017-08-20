@@ -17,17 +17,17 @@ import retrofit2.Response;
  * Created by Mido on 17/08/2017.
  */
 
-public class Presenter implements IAthletesPresenter {
+public class AllAthletesPresenter implements IAthletesPresenter {
     private IAthletesView iAthletesView;
 
-    public Presenter(IAthletesView intView) {
+    public AllAthletesPresenter(IAthletesView intView) {
         this.iAthletesView = intView;
     }
 
     public void loadAthletesFromServer() {
         Api serviceApi = RestClient.getClient();
-        Call<AllAthlete> loadSizeCall = serviceApi.loadAllAthletes();
-        loadSizeCall.enqueue(new Callback<AllAthlete>() {
+        Call<AllAthlete> athletesCall = serviceApi.loadAllAthletes();
+        athletesCall.enqueue(new Callback<AllAthlete>() {
             @Override
             public void onResponse(Call<AllAthlete> call, Response<AllAthlete> response) {
                 response.body();

@@ -10,13 +10,13 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/athleteImageView"
+            android:id="@+id/recycler_item_athlete_ImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxHeight="200dp" />
 
         <LinearLayout
-            android:id="@+id/recycler_itemLayout"
+            android:id="@+id/recycler_item_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
@@ -25,21 +25,19 @@
 
 
             <TextView
-                android:id="@+id/name_TxtView"
+                android:id="@+id/recycler_item_name_TxtView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Aardvark"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp" />
 
 
             <TextView
-                android:id="@+id/breif_TxtView"
+                android:id="@+id/athletes_details_breif_TxtView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Aardvark is a library that makes it dead simple to create actionable bug reports."
                 android:textColor="@android:color/black" />
 
         </LinearLayout>

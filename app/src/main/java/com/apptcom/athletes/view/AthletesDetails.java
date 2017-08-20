@@ -21,9 +21,9 @@ public class AthletesDetails extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_athletes_details);
 
-        athleteName = (TextView) findViewById(R.id.name_TxtView);
-        athleteBreif = (TextView) findViewById(R.id.breif_TxtView);
-        athleteImage = (ImageView) findViewById(R.id.athleteImageView);
+        athleteName = (TextView) findViewById(R.id.recycler_item_name_TxtView);
+        athleteBreif = (TextView) findViewById(R.id.athletes_details_breif_TxtView);
+        athleteImage = (ImageView) findViewById(R.id.recycler_item_athlete_ImageView);
 
         Intent camedIntent = getIntent();
         String name = camedIntent.getExtras().getString("name");

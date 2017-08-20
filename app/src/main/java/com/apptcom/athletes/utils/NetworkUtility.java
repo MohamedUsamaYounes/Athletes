@@ -8,7 +8,7 @@ import android.net.NetworkInfo;
  * Created by Mido on 17/08/2017.
  */
 
-public class InternetConnection {
+public class NetworkUtility {
 
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivity = (ConnectivityManager) context

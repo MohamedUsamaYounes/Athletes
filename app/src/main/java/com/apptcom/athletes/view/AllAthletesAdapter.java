@@ -38,15 +38,15 @@ public class AllAthletesAdapter extends RecyclerView.Adapter<AllAthletesAdapter.
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.name_TxtView)
+        @BindView(R.id.recycler_item_name_TxtView)
         TextView athleteNameView;
-        @BindView(R.id.athleteImageView)
+        @BindView(R.id.recycler_item_athlete_ImageView)
         ImageView athleteImage;
 
         MyViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
-            athleteNameView = (TextView) view.findViewById(R.id.name_TxtView);
+            athleteNameView = (TextView) view.findViewById(R.id.recycler_item_name_TxtView);
         }
 
 
